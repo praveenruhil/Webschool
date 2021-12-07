@@ -1,0 +1,29 @@
+<p>Enter new student creadentials</p>
+<div>
+    <label for="fname">First Name</label><br>
+    <input type="text" id="fname" name="fname" #fname><br><br>
+
+    <label for="lname">Last Name</label><br>
+    <input type="text" id="lname" name="lname" #lname><br><br>
+    
+    <label for="email">Email id:</label><br>
+    <input type="email" id="email" name="email" #email><br><br>
+
+    <label for="parentid">Parent Id</label><br>
+    <input type="text" id="parentid" name="parentid" #parentid><br><br>
+
+    <label for="pemail">Parent EmailId</label><br>
+    <input type="email" id="pemail" name="pemail" #pemail><br><br>
+    
+    
+   <label for="courses">Courses</label><br>
+    <select id="courses" name="courses" size="8" [(ngModel)]="selectedCars" multiple >
+
+        <option *ngFor="let item of this.common.subjectArray | keyvalue" value={{item.key}}>{{ item.value }}</option>
+    </select>
+
+
+    <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple courses.</p>
+    <input type="submit" value="Submit" (click)="addStudent(fname.value,lname.value,email.value,parentid.value,pemail.value)" routerLink="/">
+</div>
+

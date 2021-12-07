@@ -1,0 +1,16 @@
+
+<div *ngFor="let notice of notices" style="display:flex; flex-direction: row;">
+    <mat-card  class="example-card">
+      <mat-card-header>
+        <mat-card-title> {{notice.title}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+           {{notice.content}}
+        </p>
+        <p>
+           {{notice.expiry_date}}
+        </p>
+      </mat-card-content>
+      </mat-card>
+</div>

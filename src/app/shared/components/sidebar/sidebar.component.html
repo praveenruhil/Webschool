@@ -1,0 +1,30 @@
+<mat-nav-list *ngIf="this.username !== ''">
+    <div class="profile-card">
+        <div class="header">
+            <h2>{{this.dataService.username}} </h2>
+            <h4>{{this.dataService.email}}</h4>
+            <h3>{{this.dataService.role}}</h3>
+        </div>        
+        <img src="https://image.shutterstock.com/image-photo/kid-boy-academic-cap-near-260nw-1106751797.jpg" alt="No result">
+
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/user">Dashboard</a>
+    <a *ngIf="this.dataService.role != 'admin'" mat-list-item routerLinkActive="list-item-active" routerLink="/course" >Classes</a>
+    <a *ngIf="this.dataService.role == 'admin'" mat-list-item routerLinkActive="list-item-active" routerLink="/notice">Notice Board</a>
+    <a *ngIf="this.dataService.role == 'student' || this.dataService.role == 'parent' " mat-list-item routerLinkActive="list-item-active" routerLink="/fees">Fees</a>
+    <a *ngIf="this.dataService.role == 'admin'" mat-list-item routerLinkActive="list-item-active" routerLink="/student">Add Student</a>
+    <a *ngIf="this.dataService.role == 'admin'" mat-list-item routerLinkActive="list-item-active" routerLink="/teacher">Add Teacher</a>
+
+
+    <mat-divider></mat-divider>
+    
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/help">
+        <mat-icon>contact_phone</mat-icon>
+        Help
+    </a>
+
+</mat-nav-list>
+

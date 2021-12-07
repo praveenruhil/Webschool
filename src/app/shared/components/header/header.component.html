@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+       <button mat-icon-button (click)="toggleSideBar()">
+           <mat-icon>menu</mat-icon>
+       </button>
+       <span> Web School </span>
+       <div *ngIf="this.dataService.username !== ''" fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+           <ul fxLayout="row" fxLayoutGap="20px">
+               <li>
+                   <button mat-icon-button [matMenuTriggerFor]="settings">
+                       <mat-icon>settings</mat-icon>
+                   </button>
+                   <mat-menu #settings="matMenu">
+                    <button mat-menu-item (click)="openModal()">
+                        <mat-icon>exit_to_app</mat-icon>
+                        Change profile picture
+                    </button>
+                </mat-menu>
+               </li>
+               
+                <li>
+                    <button mat-button [matMenuTriggerFor]="menu">
+                        <mat-icon>person_outline</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="onLogoutClick()"> 
+                        <mat-icon>exit_to_app</mat-icon>
+                        <a>Sign out</a>
+                    </button>
+                    </mat-menu>
+                </li>
+               
+           </ul>
+       </div>
+       <div *ngIf="this.dataService.username === ''" fxFlex fxLayout="row" fxLayoutAlign="flex-end">
+        <ul fxLayout="row" fxLayoutGap="20px">
+            <li>
+                <a class="sign" (click)="onLoginClick()">Sign in</a>  
+            </li>
+        </ul>
+    </div>
+    </mat-toolbar-row>
+</mat-toolbar>

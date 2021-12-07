@@ -1,0 +1,19 @@
+<p>Enter new teacher creadentials</p>
+<div>
+    <label for="tname">Teacher name</label><br>
+    <input type="text" id="tname" name="tname" #tname><br><br>
+
+    <label for="email">Teacher email</label><br>
+    <input type="email" id="email" name="email" #email><br><br>
+    
+   <label for="courses">Courses</label><br>
+    <select id="courses" name="courses" size="8" [(ngModel)]="selectedCars" multiple >
+
+        <option *ngFor="let item of this.common.subjectArray | keyvalue" value={{item.key}}>{{ item.value }}</option>
+    </select>
+
+
+    <p>Hold down the Ctrl (windows) or Command (Mac) button to select multiple courses.</p>
+    <input type="submit" value="Submit" (click)="addTeacher(tname.value,email.value)" routerLink="/">
+</div>
+

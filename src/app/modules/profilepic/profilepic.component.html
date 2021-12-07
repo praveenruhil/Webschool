@@ -1,0 +1,19 @@
+<div id="modal-content-wrapper">
+    <header id="modal-header">
+        <h1 id="modal-title">Change profile picture</h1>
+    </header>
+    <section id="modal-body">
+    <input
+    style="display: none"
+    type="file" (change)="onFileChanged($event)"
+     #fileInput>
+ 
+    <button (click)="fileInput.click()">Select File</button>
+    <button (click)="onUpload()">Upload!</button>
+    
+    </section>
+   <!----<div>
+        {{this.selectedFile.name}}
+      </div>-->
+    
+</div>

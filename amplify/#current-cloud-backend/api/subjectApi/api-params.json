@@ -1,0 +1,42 @@
+{
+    "paths": [
+        {
+            "name": "/subjects",
+            "lambdaFunction": "subjectFunction",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/subjects"
+        }
+    ],
+    "resourceName": "subjectApi",
+    "apiName": "subjectApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "subjectFunction"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "amplify-client-dev-103629-authRole",
+        "unAuthRoleName": "amplify-client-dev-103629-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "subjectFunction",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+<p>
+  <a class='btn btn-default' (click)="onBack()">Back </a>
+</p>
+
+<header >
+  <h1 >Create Assignment</h1>
+</header>
+<div >
+    
+  <mat-card fxFlex="50" class="example-card">
+    <mat-card-header>
+      <mat-card-title>
+        <div>
+        <input type="file" (change)="onFileChange($event)" #fileInput><br>
+      </div>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <label for="name">Name of Assignment:</label><br>
+        <p><input type='text' id="name"  size=50 placeholder="Enter name of Assignemnt" name="Assignment name" #name (input)="onName(name.value)" > </p>
+
+        <label for="date">Due date of Assignment:</label><br>
+      <p> <input type='date' id="date"  size=40 placeholder="Enter due date of Assignemnt submission" name="due date " #date (input)="onDate(date.value)" > </p>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button class="example2-card" (click)="onUpload()">Upload!</button>
+    </mat-card-actions>
+    </mat-card>
+
+  </div>

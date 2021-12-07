@@ -1,0 +1,15 @@
+.example-card {
+    max-width: 300px;
+    background-color: #339966;
+    margin-bottom: 10px;
+
+
+  }
+  .example2-card {
+    max-width: 200px;
+    float: right;
+    display:inline;
+    position:initial;
+    background-color: #339966;
+
+  }

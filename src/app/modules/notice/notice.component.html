@@ -1,0 +1,14 @@
+<div>
+    <label for="title">Title</label><br>
+    <input type="text" id="title" name="title" #title ><br><br>
+    
+    <label for="content">Content:</label><br>
+    <textarea id="content" name="content" rows="4" cols="50" maxlength="50" #content></textarea><br><br>
+    
+    <label for="expiry_date">Expiry Date:</label><br>
+    <input type="date" id="expiry_date" name="expiry_date" #expiry_date><br><br>
+    
+    
+    <input type="submit" value="Submit" (click)="addNotice(title.value,content.value,expiry_date.value)" routerLink="/user">
+</div>
+
